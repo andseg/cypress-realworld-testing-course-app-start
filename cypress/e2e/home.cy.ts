@@ -51,6 +51,24 @@ describe('Home page', () => {
       cy.getByData('course-2').find('a').contains('Get started').click()
       cy.location('pathname').should('equal', '/cypress-fundamentals')
     })
+
+    it('Course dropdown (for computer screen)', () => {
+      cy.viewport(1920, 1080)
+      // Course 1
+      cy.getByData('courses-dropdown').click()
+      cy.getByData('courses-dropdown-menu').should('exist').find('a').eq(0).click()
+      cy.location('pathname').should('eq', '/testing-your-first-application')
+
+      // Course 2
+      cy.getByData('courses-dropdown').click()
+      cy.getByData('courses-dropdown-menu').should('exist').find('a').eq(1).click()
+      cy.location('pathname').should('eq', '/testing-foundations')
+
+      // Course 3
+      cy.getByData('courses-dropdown').click()
+      cy.getByData('courses-dropdown-menu').should('exist').find('a').eq(2).click()
+      cy.location('pathname').should('eq', '/cypress-fundamentals')
+    })
   })
   
 })

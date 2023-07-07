@@ -35,6 +35,8 @@ describe('User journey', () => {
     // Next lesson
     cy.getByData('challenge-answer-0').click()
     cy.getByData('next-lesson-button').should('exist').click()
+
+    // Home
     cy.location('pathname').should('eq','/')
 
   })
