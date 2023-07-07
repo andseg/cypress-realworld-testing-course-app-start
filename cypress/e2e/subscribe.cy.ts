@@ -21,7 +21,7 @@ describe('Newsletter Subscribe Form', () => {
     cy.getByData('success-message').should('not.exist')
   })
 
-  it.only('does NOT allow an email address that is already subscribed', () => {
+  it('does NOT allow an email address that is already subscribed', () => {
     // Waiting so it's easier to see the test running. Can be removed safely
     cy.wait(500)
 
