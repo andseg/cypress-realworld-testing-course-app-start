@@ -6,19 +6,19 @@ describe('Newsletter Subscribe Form', () => {
     cy.wait(500)
   })
 
-  it('allows users to subscribe to the email list', () => {
+  it('Allows users to subscribe to the email list', () => {
     cy.getByData('email-input').type('example@gmail.com')
     cy.getByData('submit-button').click()
     cy.getByData('success-message').should('exist').contains('example@gmail.com')
   })
 
-  it('does NOT allow an invalid email address', () => {
+  it('Does NOT allow an invalid email address', () => {
     cy.getByData('email-input').type('not/valid#moc$')
     cy.getByData('submit-button').click()
     cy.getByData('success-message').should('not.exist')
   })
 
-  it('does NOT allow an email address that is already subscribed', () => {
+  it('Does NOT allow an email address that is already subscribed', () => {
     cy.getByData('email-input').type('john@example.com')
     cy.getByData('submit-button').click()
     cy.getByData('server-error-message').should('exist').contains('john@example.com')

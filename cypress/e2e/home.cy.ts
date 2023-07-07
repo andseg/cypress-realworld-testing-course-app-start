@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
 
-describe('home page', () => {
+describe('Home page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
 
@@ -10,7 +10,7 @@ describe('home page', () => {
 
   //context groups related tests together making our spec file easier to read
   context('Hero section', () => {
-    it('the h1 contains the correct text', () => {
+    it('The h1 contains the correct text', () => {
       // This is done in the beforeEach hook
       // cy.visit('http://localhost:3000')
   
@@ -26,7 +26,7 @@ describe('home page', () => {
   
     })
   
-    it('the features on the homepage are correct', () => {
+    it('The features on the homepage are correct', () => {
       // This is done in the beforeEach hook
       // cy.visit('http://localhost:3000')
   
