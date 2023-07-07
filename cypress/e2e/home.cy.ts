@@ -1,7 +1,5 @@
 /// <reference types="Cypress" />
 
-import { it } from "mocha"
-
 describe('home page', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000')
