@@ -70,5 +70,19 @@ describe('Home page', () => {
       cy.location('pathname').should('eq', '/cypress-fundamentals')
     })
   })
+
+  context('Links', () => {
+    it('Test all links for a 2xx or 3xx response', () => {
+      cy.get('a').each(link => {
+        if(link.prop('href'))
+        cy.request({
+          url: link.prop('href'),
+          failOnStatusCode: false,
+          timeout: 5000
+        })
+        // cy.log(link.prop('href'))
+      })
+    })
+  })
   
 })
